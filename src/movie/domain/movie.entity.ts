@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class Movie {
@@ -17,6 +17,6 @@ export class Movie {
   @Column()
   genre: string;
 
-  @Column({ type: 'float', default: 0 })
+  @Column('decimal', { precision: 2, scale: 1, default: 0 })
   rating: number;
 }
