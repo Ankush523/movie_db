@@ -17,4 +17,8 @@ export class MovieService {
   async rateMovie(id: number, rating: number): Promise<Movie> {
     return this.movieRepository.rateMovie(id, rating);
   }
+
+  async getAllMoviesSortedByRating(): Promise<Movie[]> {
+    return this.movieRepository.findAllSortedByRating();
+  }
 }

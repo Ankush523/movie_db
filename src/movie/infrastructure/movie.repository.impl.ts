@@ -29,4 +29,8 @@ export class MovieRepositoryImpl extends MovieRepository {
     }
     return movie;
   }
+
+  async findAllSortedByRating(): Promise<Movie[]> {
+    return this.movieRepository.find({ order: { rating: 'DESC' } }); // New method to find all movies sorted by rating
+  }
 }

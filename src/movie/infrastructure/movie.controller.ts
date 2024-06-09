@@ -23,4 +23,9 @@ export class MovieController {
   ): Promise<Movie> {
     return this.movieService.rateMovie(id, rating);
   }
+
+  @Get('sorted/rating')
+  async getAllMoviesSortedByRating(): Promise<Movie[]> {
+    return this.movieService.getAllMoviesSortedByRating();
+  }
 }
